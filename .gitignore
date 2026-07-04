@@ -1,0 +1,12 @@
+# Source documents (not part of website)
+*.docx
+*.xlsx
+*.png.zone.identifier
+
+# Original photos subfolder
+images/New folder/
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
