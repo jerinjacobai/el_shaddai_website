@@ -940,64 +940,48 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
 }
 
-/* Layout: photos left, text right on desktop */
+/* Layout: photo left, text right on desktop */
 .pastor-layout {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: var(--space-3xl);
+  grid-template-columns: 420px 1fr;
+  gap: var(--space-4xl);
   align-items: center;
 }
 
-/* Two photos side by side */
-.pastor-photos {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: var(--space-md);
-}
-
-.pastor-photo-preaching,
-.pastor-photo-portrait {
+.pastor-image {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
 }
 
-.pastor-photo-preaching img {
+.pastor-image img {
   width: 100%;
-  height: 420px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.pastor-photo-portrait img {
-  width: 100%;
-  height: 420px;
+  height: 500px;
   object-fit: cover;
   object-position: center;
 }
 
 .pastor-name-badge {
   position: absolute;
-  bottom: var(--space-md);
-  left: var(--space-md);
-  right: var(--space-md);
+  bottom: var(--space-xl);
+  left: var(--space-xl);
   background: rgba(10, 22, 40, 0.9);
   backdrop-filter: blur(10px);
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-md) var(--space-xl);
   border-radius: var(--radius-sm);
   border-left: 3px solid var(--gold-400);
 }
 
 .pastor-name-badge h4 {
   color: var(--white);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-family: var(--font-heading);
 }
 
 .pastor-name-badge p {
   color: var(--gold-300);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -1465,13 +1449,8 @@ h1, h2, h3, h4, h5, h6 {
     gap: var(--space-2xl);
   }
 
-  .pastor-photos {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .pastor-photo-preaching img,
-  .pastor-photo-portrait img {
-    height: 320px;
+  .pastor-image img {
+    height: 400px;
   }
 
   .gallery-item {
@@ -1600,13 +1579,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* Pastor */
-  .pastor-photos {
-    grid-template-columns: 1fr;
-  }
-
-  .pastor-photo-preaching img,
-  .pastor-photo-portrait img {
-    height: 280px;
+  .pastor-image img {
+    height: 320px;
   }
 
   /* Gallery */
