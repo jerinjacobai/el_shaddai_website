@@ -203,10 +203,16 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================================
    HEADER & NAVIGATION
    ============================================ */
-.header {
-  position: fixed;
+.header-wrapper {
+  position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header {
+  position: relative;
   width: 100%;
   z-index: 1000;
   transition: background var(--transition-base), box-shadow var(--transition-base), padding var(--transition-base);
@@ -218,6 +224,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
   background: rgba(10, 22, 40, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
