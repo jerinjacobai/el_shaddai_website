@@ -1238,13 +1238,13 @@ h1, h2, h3, h4, h5, h6 {
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-md);
 }
 
 .contact-card {
   display: flex;
   gap: var(--space-lg);
-  padding: var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
   background: var(--white);
   border-radius: var(--radius-md);
   border: 1px solid var(--gray-100);
