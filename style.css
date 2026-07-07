@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-padding {
-  padding: var(--space-5xl) 0;
+  padding: var(--space-3xl) 0;
 }
 
 .section-padding-sm {
@@ -881,7 +881,7 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 .worship-banner {
   position: relative;
-  height: 400px;
+  height: 280px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1464,7 +1464,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .worship-banner {
-    height: 320px;
+    height: 220px;
   }
 
   .vision-cards {
@@ -1503,7 +1503,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .section-padding {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
   }
 
   /* Mobile Nav */
@@ -1596,7 +1596,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Gallery */
   /* Worship Banner */
   .worship-banner {
-    height: 260px;
+    height: 180px;
   }
 
   /* Prayer */
