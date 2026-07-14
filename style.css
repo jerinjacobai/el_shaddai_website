@@ -393,8 +393,23 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 850px;
-  padding: 0 var(--space-xl);
+  max-width: 900px;
+  padding: 130px var(--space-xl) 50px;
+}
+
+/* Custom SVG Icons Styling */
+.vision-card-icon svg,
+.ministry-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--gold-400);
+  transition: transform var(--transition-base);
+}
+
+.vision-card:hover .vision-card-icon svg,
+.ministry-card:hover .ministry-icon svg {
+  transform: scale(1.1);
+  stroke: var(--gold-300);
 }
 
 .hero-badge {
@@ -527,31 +542,39 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero scroll indicator */
 .hero-scroll {
   position: absolute;
-  bottom: 40px;
+  bottom: 35px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-sm);
-  color: rgba(255, 255, 255, 0.5);
+  gap: var(--space-xs);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
   animation: fadeIn 1s var(--ease-smooth) 1s both;
 }
 
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--gold-400), transparent);
-  animation: scroll-bounce 2s infinite;
+.hero-scroll:hover {
+  color: var(--gold-300);
+  transform: translate(-50%, 4px);
 }
 
-@keyframes scroll-bounce {
-  0%, 100% { transform: scaleY(1); opacity: 1; }
-  50% { transform: scaleY(0.5); opacity: 0.5; }
+.scroll-chevron {
+  width: 24px;
+  height: 24px;
+  stroke: var(--gold-400);
+  margin-top: 6px;
+  animation: bounce-arrow 2s infinite;
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 /* ---- Animations ---- */
