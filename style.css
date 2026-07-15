@@ -585,43 +585,6 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
-/* Hero scroll indicator */
-.hero-scroll {
-  position: absolute;
-  bottom: 35px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-xs);
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-  animation: fadeIn 1s var(--ease-smooth) 1s both;
-}
-
-.hero-scroll:hover {
-  color: var(--gold-300);
-  transform: translate(-50%, 4px);
-}
-
-.scroll-chevron {
-  width: 24px;
-  height: 24px;
-  stroke: var(--gold-400);
-  margin-top: 6px;
-  animation: bounce-arrow 2s infinite;
-}
-
-@keyframes bounce-arrow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
-}
 
 /* ---- Animations ---- */
 @keyframes fadeInUp {
@@ -1762,7 +1725,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Adjust hero layout on short screens to prevent overlap with the scroll indicator */
+/* Adjust hero layout on short screens to prevent overflow */
 @media (max-height: 780px) {
   .hero-content {
     padding-top: 100px;
@@ -1777,9 +1740,6 @@ h1, h2, h3, h4, h5, h6 {
   .hero-scripture {
     margin-bottom: var(--space-lg);
   }
-  .hero-scroll {
-    bottom: 15px;
-  }
 }
 
 @media (max-height: 660px) {
@@ -1789,8 +1749,5 @@ h1, h2, h3, h4, h5, h6 {
   }
   .hero-logo-container {
     margin-bottom: var(--space-md);
-  }
-  .hero-scroll {
-    display: none; /* Hide scroll indicator if there's absolutely no vertical space */
   }
 }
