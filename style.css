@@ -245,8 +245,40 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 4px;
+}
+
+.logo-image {
+  height: 104px; /* Doubled from 52px */
+  width: auto;
+  object-fit: contain;
+  transition: height var(--transition-base);
+}
+
+.logo-estd {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gold-400);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: opacity var(--transition-base), max-height var(--transition-base), margin var(--transition-base);
+  margin-top: 2px;
+  line-height: 1;
+}
+
+.header.scrolled .logo-image {
+  height: 60px;
+}
+
+.header.scrolled .logo-estd {
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .logo-icon {
@@ -395,6 +427,20 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   max-width: 900px;
   padding: 130px var(--space-xl) 50px;
+}
+
+.hero-logo-container {
+  margin-bottom: var(--space-xl);
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo-image {
+  max-width: min(780px, 95vw);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
 }
 
 /* Custom SVG Icons Styling */
@@ -1211,8 +1257,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .schedule-icon {
-  font-size: 2rem;
   margin-bottom: var(--space-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+}
+
+.schedule-icon svg {
+  width: 44px;
+  height: 44px;
+  stroke: var(--gold-400);
+  transition: transform var(--transition-base), stroke var(--transition-base), filter var(--transition-base);
+}
+
+.schedule-card:hover .schedule-icon svg {
+  transform: scale(1.15) translateY(-2px);
+  stroke: var(--gold-300);
+  filter: drop-shadow(0 4px 12px rgba(197, 165, 90, 0.4));
 }
 
 .schedule-card h3 {
@@ -1372,16 +1434,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: var(--space-3xl);
   margin-bottom: var(--space-3xl);
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  flex: 0 1 360px;
 }
 
 .footer-brand .logo-text {
   font-size: 1.5rem;
   margin-bottom: var(--space-md);
   display: block;
+}
+
+.footer-logo-image {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  transition: height var(--transition-base);
 }
 
 .footer-brand p {
@@ -1416,6 +1490,12 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-3px);
 }
 
+.footer-column {
+  flex: 1 1 auto;
+  min-width: 170px;
+  max-width: 250px;
+}
+
 .footer-column h4 {
   color: var(--white);
   font-family: var(--font-body);
@@ -1423,16 +1503,18 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: var(--space-xl);
-}
-
-.footer-column li {
   margin-bottom: var(--space-md);
 }
 
-.footer-column a {
-  font-size: 0.9rem;
+.footer-column li {
+  margin-bottom: 12px;
   color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-column a {
+  color: inherit;
   transition: color var(--transition-fast);
 }
 
@@ -1506,10 +1588,6 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
-  }
 
   .prayer-countries {
     grid-template-columns: repeat(3, 1fr) !important;
@@ -1519,6 +1597,18 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   :root {
     --header-height: 64px;
+  }
+
+  .logo-image {
+    height: 70px;
+  }
+
+  .header.scrolled .logo-image {
+    height: 48px;
+  }
+
+  .logo-estd {
+    font-size: 0.65rem;
   }
 
   .container {
@@ -1639,7 +1729,7 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Footer */
   .footer-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: var(--space-2xl);
   }
 
@@ -1647,6 +1737,10 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     gap: var(--space-md);
     text-align: center;
+  }
+
+  .footer-logo-image {
+    height: 110px;
   }
 }
 
@@ -1665,5 +1759,38 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: var(--space-md);
     text-align: left;
+  }
+}
+
+/* Adjust hero layout on short screens to prevent overlap with the scroll indicator */
+@media (max-height: 780px) {
+  .hero-content {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+  .hero-logo-container {
+    margin-bottom: var(--space-lg);
+  }
+  .hero-subtitle {
+    margin-bottom: var(--space-lg);
+  }
+  .hero-scripture {
+    margin-bottom: var(--space-lg);
+  }
+  .hero-scroll {
+    bottom: 15px;
+  }
+}
+
+@media (max-height: 660px) {
+  .hero-content {
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+  .hero-logo-container {
+    margin-bottom: var(--space-md);
+  }
+  .hero-scroll {
+    display: none; /* Hide scroll indicator if there's absolutely no vertical space */
   }
 }
