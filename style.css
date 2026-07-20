@@ -436,7 +436,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-logo-image {
-  max-width: min(780px, 95vw);
+  max-width: min(840px, 95vw);
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -982,6 +982,71 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
 }
 
+.pastor-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--space-3xl);
+}
+
+.pastor-header .section-label {
+  color: var(--gold-500);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.pastor-header h2 {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  color: var(--navy-900);
+  margin-bottom: var(--space-md);
+}
+
+/* Senior Pastor Card (No photo) */
+.senior-pastor-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3xl);
+  box-shadow: var(--shadow-lg);
+  border-top: 4px solid var(--gold-400);
+  position: relative;
+}
+
+.senior-pastor-card h3,
+.pastor-content h3 {
+  font-family: var(--font-heading);
+  color: var(--navy-800);
+  font-size: 1.6rem;
+  margin-bottom: 2px;
+}
+
+.pastor-badge-tag {
+  display: inline-block;
+  background: rgba(197, 165, 90, 0.15);
+  color: var(--gold-600);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 50px;
+  margin-bottom: var(--space-md);
+}
+
+.pastor-role {
+  color: var(--gold-500);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: var(--space-md);
+}
+
+.leadership-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197, 165, 90, 0.3), transparent);
+  margin: var(--space-4xl) 0;
+}
+
 /* Layout: photo left, text right on desktop */
 .pastor-layout {
   display: grid;
@@ -1002,44 +1067,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 520px;
   object-fit: cover;
   object-position: top center;
-}
-
-.pastor-name-badge {
-  position: absolute;
-  bottom: var(--space-xl);
-  left: var(--space-xl);
-  background: rgba(10, 22, 40, 0.9);
-  backdrop-filter: blur(10px);
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-sm);
-  border-left: 3px solid var(--gold-400);
-}
-
-.pastor-name-badge h4 {
-  color: var(--white);
-  font-size: 1rem;
-  font-family: var(--font-heading);
-}
-
-.pastor-name-badge p {
-  color: var(--gold-300);
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.pastor-content .section-label {
-  color: var(--gold-500);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: var(--space-md);
-}
-
-.pastor-content h2 {
-  font-size: clamp(1.8rem, 3vw, 2.2rem);
-  margin-bottom: var(--space-lg);
 }
 
 .pastor-quote {
@@ -1063,10 +1090,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+.senior-pastor-card p,
 .pastor-content p {
   color: var(--gray-600);
   margin-bottom: var(--space-md);
   font-size: 1rem;
+  line-height: 1.8;
 }
 
 /* ============================================
@@ -1665,6 +1694,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* Pastor */
+  .senior-pastor-card {
+    padding: var(--space-xl);
+  }
+
   .pastor-image img {
     height: 320px;
   }
