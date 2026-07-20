@@ -999,9 +999,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .pastor-image img {
   width: 100%;
-  height: 500px;
+  height: 520px;
   object-fit: cover;
-  object-position: center;
+  object-position: top center;
 }
 
 .pastor-name-badge {
