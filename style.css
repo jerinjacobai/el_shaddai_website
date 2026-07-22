@@ -965,10 +965,30 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================================
    PASTOR'S MESSAGE
    ============================================ */
-.senior-pastor-section {
+.leadership-section {
   background: var(--white);
   position: relative;
   overflow: hidden;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+}
+
+.pastor-info-card {
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3xl);
+  box-shadow: var(--shadow-md);
+  border-top: 4px solid var(--gold-400);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.pastor-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
 }
 
 .pastor-section {
@@ -1009,17 +1029,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--space-md);
 }
 
-/* Senior Pastor Card (No photo) */
-.senior-pastor-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: var(--space-3xl);
-  box-shadow: var(--shadow-lg);
-  border-top: 4px solid var(--gold-400);
-  position: relative;
-}
-
-.senior-pastor-card h3,
+.pastor-info-card h3,
 .pastor-content h3 {
   font-family: var(--font-heading);
   color: var(--navy-800);
@@ -1557,6 +1567,7 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 @media (max-width: 1024px) {
   .welcome-grid,
+  .leadership-grid,
   .pastor-layout {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
