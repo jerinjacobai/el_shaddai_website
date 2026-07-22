@@ -1066,8 +1066,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Layout: photo left, text right on desktop */
 .pastor-layout {
   display: grid;
-  grid-template-columns: 480px 1fr;
-  gap: var(--space-3xl);
+  grid-template-columns: 550px 1fr;
+  gap: var(--space-4xl);
   align-items: center;
 }
 
@@ -1575,7 +1575,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .pastor-image {
-    max-width: 600px;
+    max-width: 720px;
     width: 100%;
     margin: 0 auto;
   }
