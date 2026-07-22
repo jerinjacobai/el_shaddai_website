@@ -965,6 +965,12 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================================
    PASTOR'S MESSAGE
    ============================================ */
+.senior-pastor-section {
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
 .pastor-section {
   background: var(--gray-50);
   position: relative;
