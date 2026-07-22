@@ -1066,8 +1066,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Layout: photo left, text right on desktop */
 .pastor-layout {
   display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: var(--space-4xl);
+  grid-template-columns: 480px 1fr;
+  gap: var(--space-3xl);
   align-items: center;
 }
 
@@ -1076,13 +1076,14 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
+  background: var(--navy-900);
 }
 
 .pastor-image img {
   width: 100%;
-  height: 520px;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .pastor-quote {
@@ -1573,8 +1574,14 @@ h1, h2, h3, h4, h5, h6 {
     gap: var(--space-2xl);
   }
 
+  .pastor-image {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .pastor-image img {
-    height: 400px;
+    height: auto;
   }
 
   .worship-banner {
@@ -1715,8 +1722,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: var(--space-xl);
   }
 
+  .pastor-image {
+    max-width: 100%;
+  }
+
   .pastor-image img {
-    height: 320px;
+    height: auto;
   }
 
   /* Gallery */
